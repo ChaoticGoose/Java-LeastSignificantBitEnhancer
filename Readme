@@ -1,8 +1,15 @@
 This application is designed to enhance the Least Significant bit of each channel of an image, to allow visualation of potential setganography
 
+All images that are to be processed should be put into a folder called "inputs" in the working directory
+
 Automatic Usage, relies on there being an output folder, which has the same directory structure as the input folder
 	find inputs/* | grep [.] | (cat - && echo "exit") | java LSBE
 	
 in order to replicate the inputs folders into the outputs folders, use
 	mkdir -p outputs; find inputs -type d -exec mkdir -p outputs/{} \;
-
+	
+A bash script has been added, to allow for easy automation.
+	This script will:
+		Copy the file structure of "inputs" to "Outputs"
+		Run the program on each file, and then exit the program
+To find the processed files, look in "outputs/inputs/*"
