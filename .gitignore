@@ -1,0 +1,7 @@
+*.class
+*.jpg
+*.txt
+*.png
+
+inputs/*
+outputs/*
