@@ -54,7 +54,11 @@ class LSBE
 			//for each byte in the image (all channels) amplify the MSB
 			for(int i = 0; i<data.length;i++)
 			{
-				data[i] = ((byte)((((byte)data[i])<<7)&0x80));
+				//data[i] = ((byte)(((byte)data[i])<<7));
+				if((data[i]&0x01) == 1)
+					data[i] = (byte)255;
+				else
+					data[i] = 0;
 			}
 
 		
